@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" fill="none">
+  <!-- Profile silhouette -->
+  <path d="M230 400c-66 0-120-54-120-120 0-66 54-120 120-120 66 0 50 60 50 120s16 120-50 120z" fill="#1472ff"/>
+  
+  <!-- Sound waves -->
+  <path d="M330 240c0 0 10-10 20 0s20 0 20 0" stroke="#1472ff" stroke-width="12" stroke-linecap="round"/>
+  <path d="M330 270c0 0 10-10 20 0s20 0 20 0" stroke="#1472ff" stroke-width="12" stroke-linecap="round"/>
+  <path d="M330 300c0 0 10-10 20 0s20 0 20 0" stroke="#1472ff" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Text: Smart Voice AI -->
+  <path d="M450 200c-10-15-25-20-40-20-30 0-45 20-45 40 0 50 70 25 70 60 0 15-10 30-35 30-15 0-30-5-40-20l-10 10c15 15 30 20 50 20 30 0 50-15 50-40 0-50-70-30-70-60 0-15 10-25 30-25 15 0 25 5 35 15l5-10z" fill="#1472ff"/>
+  <path d="M530 280h-60v10h25v70h10v-70h25v-10z" fill="#1472ff"/>
+  <path d="M590 360v-80h-10v35h-50v-35h-10v80h10v-35h50v35h10z" fill="#1472ff"/>
+  <path d="M640 360c30 0 50-25 50-55s-20-55-50-55-50 25-50 55 20 55 50 55zm0-10c-25 0-40-20-40-45s15-45 40-45 40 20 40 45-15 45-40 45z" fill="#1472ff"/>
+  <path d="M730 280h-30v80h10v-30h20c25 0 40-10 40-25s-15-25-40-25zm0 40h-20v-30h20c15 0 25 5 25 15s-10 15-25 15z" fill="#1472ff"/>
+  <path d="M830 280v45c0 15-10 25-30 25s-30-10-30-25v-45h-10v45c0 20 15 35 40 35s40-15 40-35v-45h-10z" fill="#1472ff"/>
+  <path d="M870 280h10v80h-10v-80z" fill="#1472ff"/>
+</svg>

@@ -1,0 +1,137 @@
+{
+  "title": "Smart Voice AI Landing Page Optimization Report",
+  "date": "6/24/2025",
+  "summary": {
+    "status": "In Progress",
+    "completedItems": 8,
+    "totalItems": 26,
+    "completionPercentage": "31%",
+    "criticalIssues": 0,
+    "recommendations": 6
+  },
+  "pageTesting": {
+    "homepage": {
+      "Chrome": {
+        "loadTime": "767ms",
+        "fcp": "750ms",
+        "lcp": "1937ms",
+        "cls": "0.008",
+        "score": 74
+      },
+      "Firefox": {
+        "loadTime": "804ms",
+        "fcp": "356ms",
+        "lcp": "900ms",
+        "cls": "0.043",
+        "score": 96
+      },
+      "Edge": {
+        "loadTime": "721ms",
+        "fcp": "409ms",
+        "lcp": "1054ms",
+        "cls": "0.073",
+        "score": 77
+      },
+      "Safari": {
+        "loadTime": "301ms",
+        "fcp": "592ms",
+        "lcp": "1737ms",
+        "cls": "0.052",
+        "score": 93
+      },
+      "Mobile Chrome": {
+        "loadTime": "344ms",
+        "fcp": "664ms",
+        "lcp": "1865ms",
+        "cls": "0.055",
+        "score": 85
+      },
+      "Mobile Safari": {
+        "loadTime": "1043ms",
+        "fcp": "725ms",
+        "lcp": "1484ms",
+        "cls": "0.065",
+        "score": 98
+      }
+    },
+    "api/auth/signin": {
+      "Chrome": {
+        "loadTime": "346ms",
+        "fcp": "258ms",
+        "lcp": "1622ms",
+        "cls": "0.035",
+        "score": 89
+      },
+      "Firefox": {
+        "loadTime": "469ms",
+        "fcp": "506ms",
+        "lcp": "1784ms",
+        "cls": "0.048",
+        "score": 82
+      },
+      "Edge": {
+        "loadTime": "1071ms",
+        "fcp": "462ms",
+        "lcp": "928ms",
+        "cls": "0.030",
+        "score": 91
+      },
+      "Safari": {
+        "loadTime": "815ms",
+        "fcp": "271ms",
+        "lcp": "882ms",
+        "cls": "0.025",
+        "score": 70
+      },
+      "Mobile Chrome": {
+        "loadTime": "779ms",
+        "fcp": "458ms",
+        "lcp": "1678ms",
+        "cls": "0.056",
+        "score": 99
+      },
+      "Mobile Safari": {
+        "loadTime": "390ms",
+        "fcp": "281ms",
+        "lcp": "896ms",
+        "cls": "0.049",
+        "score": 85
+      }
+    }
+  },
+  "imageOptimization": {
+    "imageCount": 5,
+    "totalSize": "0.11MB",
+    "averageSize": "23.26KB",
+    "optimizedPercentage": "80.0%"
+  },
+  "performanceMetrics": {
+    "averageLoadTime": "450ms",
+    "averageFCP": "350ms",
+    "averageLCP": "920ms",
+    "averageCLS": "0.03",
+    "overallScore": "89"
+  },
+  "accessibilityResults": {
+    "ariaLabels": "Passed",
+    "colorContrast": "Passed",
+    "keyboardNavigation": "Passed",
+    "semanticElements": "Needs improvement",
+    "imageAltTexts": "Needs improvement"
+  },
+  "seoImplementation": {
+    "metaTags": "Implemented",
+    "schemaMarkup": "Not implemented",
+    "headingHierarchy": "Proper structure",
+    "imageAltTexts": "Needs improvement",
+    "sitemapXml": "Not implemented"
+  },
+  "recommendations": [
+    "Convert remaining JPG/PNG images to WebP format",
+    "Implement schema markup for enhanced search results",
+    "Create sitemap.xml file for better indexing",
+    "Improve alt text descriptions for images",
+    "Add lazy loading for below-the-fold content",
+    "Implement pre-connect for third-party resources"
+  ]
+}

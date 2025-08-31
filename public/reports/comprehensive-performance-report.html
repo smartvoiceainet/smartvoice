@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Voice AI - Performance Report</title>
+  <style>
+    :root {
+      --primary: #1472ff;
+      --primary-dark: #0d47a1;
+      --success: #4caf50;
+      --warning: #ff9800;
+      --danger: #f44336;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --gray: #6c757d;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      color: var(--dark);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    h1, h2, h3 {
+      color: var(--primary-dark);
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eaeaea;
+    }
+    
+    .date {
+      color: var(--gray);
+      font-style: italic;
+    }
+    
+    .score-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .score-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .score-title {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin: 0 0 1rem 0;
+    }
+    
+    .score {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    
+    .good {
+      color: var(--success);
+    }
+    
+    .average {
+      color: var(--warning);
+    }
+    
+    .poor {
+      color: var(--danger);
+    }
+    
+    .metrics-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 2rem;
+    }
+    
+    .metrics-table th {
+      text-align: left;
+      padding: 0.75rem;
+      background-color: var(--light);
+    }
+    
+    .metrics-table td {
+      padding: 0.75rem;
+      border-top: 1px solid #eaeaea;
+    }
+    
+    .recommendations {
+      margin-top: 3rem;
+    }
+    
+    .recommendation-card {
+      background-color: white;
+      border-left: 4px solid var(--primary);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .recommendation-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .high {
+      border-left-color: var(--danger);
+    }
+    
+    .medium {
+      border-left-color: var(--warning);
+    }
+    
+    .low {
+      border-left-color: var(--success);
+    }
+    
+    .impact-badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 50px;
+      margin-left: 0.75rem;
+    }
+    
+    .impact-high {
+      background-color: var(--danger);
+      color: white;
+    }
+    
+    .impact-medium {
+      background-color: var(--warning);
+      color: white;
+    }
+    
+    .impact-low, .impact-serious, .impact-critical, .impact-moderate {
+      background-color: var(--danger);
+      color: white;
+    }
+    
+    .resource-chart {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      height: 30px;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .chart-js {
+      grid-column: span 6;
+      background-color: #f7df1e;
+      height: 100%;
+    }
+    
+    .chart-css {
+      grid-column: span 1;
+      background-color: #2965f1;
+      height: 100%;
+    }
+    
+    .chart-images {
+      grid-column: span 4;
+      background-color: #4caf50;
+      height: 100%;
+    }
+    
+    .chart-fonts {
+      grid-column: span 1;
+      background-color: #9c27b0;
+      height: 100%;
+    }
+    
+    .chart-other {
+      grid-column: span 0;
+      background-color: #607d8b;
+      height: 100%;
+    }
+    
+    .chart-legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      margin-right: 0.5rem;
+      border-radius: 2px;
+    }
+    
+    .legend-js { background-color: #f7df1e; }
+    .legend-css { background-color: #2965f1; }
+    .legend-images { background-color: #4caf50; }
+    .legend-fonts { background-color: #9c27b0; }
+    .legend-other { background-color: #607d8b; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1>Performance Report</h1>
+      <p>Smart Voice AI Landing Page</p>
+    </div>
+    <div class="date">6/25/2025, 12:27:20 AM</div>
+  </div>
+  
+  <div class="score-container">
+    <div class="score-card">
+      <h3 class="score-title">Performance</h3>
+      <div class="score good">92</div>
+    </div>
+    
+    <div class="score-card">
+      <h3 class="score-title">Accessibility</h3>
+      <div class="score good">96</div>
+    </div>
+    
+    <div class="score-card">
+      <h3 class="score-title">Best Practices</h3>
+      <div class="score average">87</div>
+    </div>
+    
+    <div class="score-card">
+      <h3 class="score-title">SEO</h3>
+      <div class="score good">98</div>
+    </div>
+    
+    <div class="score-card">
+      <h3 class="score-title">PWA</h3>
+      <div class="score poor">65</div>
+    </div>
+  </div>
+  
+  <h2>Performance Metrics</h2>
+  
+  <table class="metrics-table">
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Value</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>First Contentful Paint</td>
+        <td>1.2s</td>
+        <td>✅ Good</td>
+      </tr>
+      <tr>
+        <td>Speed Index</td>
+        <td>1.8s</td>
+        <td>✅ Good</td>
+      </tr>
+      <tr>
+        <td>Largest Contentful Paint</td>
+        <td>2.3s</td>
+        <td>✅ Good</td>
+      </tr>
+      <tr>
+        <td>Time to Interactive</td>
+        <td>3.1s</td>
+        <td>✅ Good</td>
+      </tr>
+      <tr>
+        <td>Total Blocking Time</td>
+        <td>180ms</td>
+        <td>✅ Good</td>
+      </tr>
+      <tr>
+        <td>Cumulative Layout Shift</td>
+        <td>0.02</td>
+        <td>✅ Good</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2>Resource Optimization</h2>
+  
+  <div>
+    <p>Total resources: 32 (1.2MB)</p>
+    
+    <div class="chart-legend">
+      <div class="legend-item">
+        <span class="legend-color legend-js"></span>
+        JavaScript (645KB)
+      </div>
+      <div class="legend-item">
+        <span class="legend-color legend-css"></span>
+        CSS (86KB)
+      </div>
+      <div class="legend-item">
+        <span class="legend-color legend-images"></span>
+        Images (420KB)
+      </div>
+      <div class="legend-item">
+        <span class="legend-color legend-fonts"></span>
+        Fonts (72KB)
+      </div>
+      <div class="legend-item">
+        <span class="legend-color legend-other"></span>
+        Other (18KB)
+      </div>
+    </div>
+    
+    <div class="resource-chart">
+      <div class="chart-js"></div>
+      <div class="chart-css"></div>
+      <div class="chart-images"></div>
+      <div class="chart-fonts"></div>
+      <div class="chart-other"></div>
+    </div>
+    
+    <p>Cacheable resources: 94%</p>
+    <p>Compressed resources: 100%</p>
+  </div>
+  
+  <h2 class="recommendations">Recommendations</h2>
+  
+  
+    <div class="recommendation-card high">
+      <h3 class="recommendation-title">Reduce JavaScript execution time <span class="impact-badge impact-high">high</span></h3>
+      <p>Heavy JavaScript is blocking the main thread. Consider code-splitting and lazy loading non-critical components.</p>
+      <p><strong>Implementation:</strong> Use dynamic imports for below-the-fold components and defer non-essential scripts.</p>
+    </div>
+  
+    <div class="recommendation-card serious">
+      <h3 class="recommendation-title">Fix color-contrast issue <span class="impact-badge impact-serious">serious</span></h3>
+      <p>Some UI elements do not have sufficient color contrast</p>
+      <p><strong>Implementation:</strong> Update the color palette in config.js to ensure all text meets WCAG AA contrast standards (4.5:1 for normal text).</p>
+    </div>
+  
+    <div class="recommendation-card critical">
+      <h3 class="recommendation-title">Fix label issue <span class="impact-badge impact-critical">critical</span></h3>
+      <p>Form elements need associated labels</p>
+      <p><strong>Implementation:</strong> Add proper label elements or aria-label attributes to all form inputs.</p>
+    </div>
+  
+    <div class="recommendation-card moderate">
+      <h3 class="recommendation-title">Add missing meta-description <span class="impact-badge impact-moderate">moderate</span></h3>
+      <p>Some pages are missing meta descriptions</p>
+      <p><strong>Implementation:</strong> Use the SEO component on all pages with appropriate metadata.</p>
+    </div>
+  
+    <div class="recommendation-card medium">
+      <h3 class="recommendation-title">Implement Progressive Web App features <span class="impact-badge impact-medium">medium</span></h3>
+      <p>The site lacks PWA capabilities that could improve user experience and engagement.</p>
+      <p><strong>Implementation:</strong> Add a web manifest, service worker, and appropriate icons to enable installation and offline support.</p>
+    </div>
+  
+  
+  <h2>Next Steps</h2>
+  <ol>
+    <li>Address high-impact recommendations first</li>
+    <li>Re-test after each major change</li>
+    <li>Implement A/B testing on core conversion elements</li>
+    <li>Continue monitoring real-user metrics</li>
+    <li>Expand testing to include mobile devices and slower connections</li>
+  </ol>
+  
+  <div style="margin-top: 3rem; text-align: center; color: var(--gray); font-size: 0.9rem;">
+    <p>Generated by Smart Voice AI Performance Monitoring System</p>
+  </div>
+</body>
+</html>
+  

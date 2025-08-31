@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="80" viewBox="0 0 240 80" fill="none">
+  <rect width="80" height="80" rx="40" fill="#1472ff" />
+  <path d="M40 55C34.6364 61.7748 27.7946 65 20 65V35C27 45 34.6364 48.2252 40 55Z" fill="white" />
+  <path d="M40 55C45.3636 48.2252 53.5 45 60 45V70C53.5 65 45.3636 61.7748 40 55Z" fill="white" />
+  <path d="M40 45C34 38 27 35 20 35V20C27 25 34 31.7748 40 45Z" fill="white" />
+  <text x="95" y="35" font-family="Arial" font-size="18" font-weight="bold" fill="#1472ff">Smart</text>
+  <text x="95" y="65" font-family="Arial" font-size="24" font-weight="bold" fill="#1472ff">Voice AI</text>
+</svg>
