@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function SignInPage() {
+function SignInContent() {
   const router = useRouter();
   const { data: session, status } = useSession();
   const [isLoading, setIsLoading] = useState(false);
@@ -105,5 +105,17 @@ export default function SignInPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    }>
+      <SignInContent />
+    </Suspense>
   );
 }
