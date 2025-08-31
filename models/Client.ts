@@ -72,7 +72,7 @@ const clientSchema = new Schema<IClient>(
 );
 
 // Add plugin that converts mongoose to json
-clientSchema.plugin(toJSON);
+clientSchema.plugin(toJSON as any);
 
 // Handle the case where mongoose.models might be undefined
 let ClientModel: mongoose.Model<IClient>;

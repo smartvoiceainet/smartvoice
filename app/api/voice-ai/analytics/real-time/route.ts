@@ -113,16 +113,16 @@ export async function GET(req: NextRequest) {
       // Use existing metrics
       currentMetrics = {
         date: formatISO(today, { representation: 'date' }),
-        totalCalls: todayMetrics.totalCalls,
-        successfulCalls: todayMetrics.successfulCalls,
-        failedCalls: todayMetrics.failedCalls,
-        qualifiedCalls: todayMetrics.qualifiedCalls,
-        totalDurationSeconds: todayMetrics.totalDurationSeconds,
-        averageDurationSeconds: todayMetrics.averageDurationSeconds,
-        totalCost: todayMetrics.totalCost,
-        estimatedRevenue: todayMetrics.estimatedRevenue,
-        successRate: todayMetrics.successRate,
-        qualificationRate: todayMetrics.qualificationRate,
+        totalCalls: todayMetrics.metrics.totalCalls,
+        successfulCalls: todayMetrics.metrics.successfulCalls,
+        failedCalls: todayMetrics.metrics.failedCalls,
+        qualifiedCalls: todayMetrics.metrics.qualifiedCalls,
+        totalDurationSeconds: todayMetrics.metrics.totalDurationSeconds,
+        averageDurationSeconds: todayMetrics.metrics.averageDurationSeconds,
+        totalCost: todayMetrics.metrics.totalCost,
+        estimatedRevenue: todayMetrics.metrics.estimatedRevenue,
+        successRate: todayMetrics.metrics.successRate,
+        qualificationRate: todayMetrics.metrics.qualificationRate,
         hourlyBreakdown: todayMetrics.hourlyBreakdown || {}
       };
     } else {

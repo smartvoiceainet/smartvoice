@@ -166,7 +166,7 @@ class SyncService {
             }
           });
           
-          const qualifiedCalls = callsForDay.filter(call => call.isQualified).length;
+          const qualifiedCalls = callsForDay.filter(call => call.analysis?.isQualified).length;
           const qualificationRate = callsForDay.length > 0 ? 
             (qualifiedCalls / callsForDay.length) * 100 : 0;
             

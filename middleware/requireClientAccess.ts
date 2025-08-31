@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from '@/libs/next-auth';
 import { UserRole } from '@/models/User';
 
 /**
@@ -22,10 +22,17 @@ export async function requireClientAccess(
     }
     
     // Client ID can be from route params, query params, or request body
-    const clientId = 
-      clientIdParam || 
-      req.nextUrl.searchParams.get('clientId') || 
-      (req.body && (await req.body.clientId));
+    let clientId = clientIdParam || req.nextUrl.searchParams.get('clientId');
+    
+    // Try to get clientId from request body if not found in params
+    if (!clientId && req.body) {
+      try {
+        const body = await req.json();
+        clientId = body.clientId;
+      } catch (error) {
+        // Body might not be JSON or already consumed, ignore error
+      }
+    }
     
     // Admin users can access all client data
     if (session.user.role === UserRole.ADMIN) {

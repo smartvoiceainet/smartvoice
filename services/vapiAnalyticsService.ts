@@ -177,12 +177,12 @@ class VapiAnalyticsService {
     if (!this.refreshInterval) {
       this.refreshInterval = setInterval(async () => {
         // For each listener, fetch data with their specific filters
-        for (const listener of this.listeners) {
+        Array.from(this.listeners).forEach(listener => {
           const info = Array.from(this.listeners).find(l => l === listener) as any;
           if (info && info.wrapped) {
             info.wrapped();
           }
-        }
+        });
       }, interval);
     }
     

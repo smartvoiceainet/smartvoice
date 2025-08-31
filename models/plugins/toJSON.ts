@@ -15,7 +15,7 @@ const deleteAtPath = (obj: any, path: string[], index: number) => {
   deleteAtPath(obj[path[index]], path, index + 1);
 };
 
-const toJSON = <T extends Document>(schema: Schema<T>) => {
+const toJSON = (schema: Schema<any>) => {
   schema.set('toJSON', {
     transform: function (doc, ret) {
       Object.keys(schema.paths).forEach((path) => {

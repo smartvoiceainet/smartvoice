@@ -56,6 +56,9 @@ export async function POST(req: NextRequest) {
         const customer = (await stripe.customers.retrieve(
           customerId as string
         )) as Stripe.Customer;
+        
+        // Ensure customerId is a string for database storage
+        const customerIdString = typeof customerId === 'string' ? customerId : customer.id;
 
         let user;
 
@@ -80,7 +83,7 @@ export async function POST(req: NextRequest) {
 
         // Update user data + Grant user access to your product. It's a boolean in the database, but could be a number of credits, etc...
         user.priceId = priceId;
-        user.customerId = customerId;
+        user.customerId = customerIdString;
         user.hasAccess = true;
         await user.save();
 
