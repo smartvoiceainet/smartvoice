@@ -10,7 +10,7 @@ import { UserRole } from "@/models/User";
 import mongoose from "mongoose";
 
 interface NextAuthOptionsExtended extends NextAuthOptions {
-  adapter: any;
+  adapter?: any;
 }
 
 // Extend session type for Voice AI permissions
@@ -36,12 +36,12 @@ declare module "next-auth" {
 
 export const authOptions: NextAuthOptionsExtended = {
   // Set any random key in .env.local
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || "fallback-secret-for-development",
   providers: [
     GoogleProvider({
       // Follow the "Login with Google" tutorial to get your credentials
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
+      clientId: process.env.GOOGLE_ID || "",
+      clientSecret: process.env.GOOGLE_SECRET || "",
       async profile(profile) {
         // Enhanced profile with Google OAuth fields
         return {
@@ -61,7 +61,7 @@ export const authOptions: NextAuthOptionsExtended = {
     }),
     // Follow the "Login with Email" tutorial to set up your email server
     // Requires a MongoDB database. Set MONOGODB_URI env variable.
-    EmailProvider({
+    ...(process.env.RESEND_API_KEY ? [EmailProvider({
       server: {
         host: "smtp.resend.com",
         port: 465,
@@ -71,16 +71,18 @@ export const authOptions: NextAuthOptionsExtended = {
         },
       },
       from: config.resend.fromNoReply,
-    }),
+    })] : []),
   ],
   // New users will be saved in Database (MongoDB Atlas). Each user (model) has some fields like name, email, image, etc..
   // Requires a MongoDB database. Set MONOGODB_URI env variable.
   // Learn more about the model type: https://next-auth.js.org/v3/adapters/models
-  adapter: MongoDBAdapter(async () => {
-    await dbConnect();
-    const client = new MongoClient(process.env.MONGODB_URI as string);
-    return client.connect();
-  }),
+  ...(process.env.MONGODB_URI ? {
+    adapter: MongoDBAdapter(async () => {
+      await dbConnect();
+      const client = new MongoClient(process.env.MONGODB_URI as string);
+      return client.connect();
+    })
+  } : {}),
 
   callbacks: {
     // Enhance JWT token with user role and permissions
