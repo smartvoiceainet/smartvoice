@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import ButtonSignin from "./ButtonSignin";
+import ButtonScheduleDemo from "./ButtonScheduleDemo";
 import ButtonAccount from "./ButtonAccount";
 import VoiceAIMenu from "./VoiceAI/VoiceAIMenu";
 import VoiceAINotifications from "./VoiceAI/VoiceAINotifications";
@@ -30,7 +31,12 @@ const links: {
   },
 ];
 
-const cta: JSX.Element = <ButtonSignin extraStyle="btn-primary" />;
+const cta: JSX.Element = (
+  <div className="flex items-center gap-2">
+    <ButtonSignin extraStyle="btn-primary" />
+    <ButtonScheduleDemo />
+  </div>
+);
 
 // A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
 // The header is responsive, and on mobile, the links are hidden behind a burger button.
@@ -195,7 +201,10 @@ const Header = () => {
                     <ButtonAccount />
                   </div>
                 ) : (
-                  cta
+                  <div className="space-y-2">
+                    <ButtonSignin extraStyle="btn-primary w-full" />
+                    <ButtonScheduleDemo extraStyle="w-full" />
+                  </div>
                 )}
               </div>
             </div>
