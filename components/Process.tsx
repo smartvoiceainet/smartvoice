@@ -100,7 +100,7 @@ const Process = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-blue-50 p-6 md:p-8 rounded-xl col-span-full text-center mt-8"
+            className="bg-blue-50 p-6 md:p-8 rounded-xl col-span-full text-center mt-8 relative z-10"
           >
             <p className="font-bold text-slate-800 mb-4">Ready to transform your practice with AI?</p>
             <a href="#pricing" className="btn btn-primary btn-lg">
