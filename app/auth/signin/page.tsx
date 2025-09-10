@@ -36,6 +36,16 @@ function SignInContent() {
       <div className="card w-full max-w-md bg-base-200 shadow-xl">
         <div className="card-body">
           <div className="text-center mb-6">
+            <Link href="/" className="inline-block mb-4 hover:opacity-80 transition-opacity">
+              <Image
+                src="/images/smartvoiceclearbackcropped.png"
+                alt="Smart Voice AI"
+                width={200}
+                height={60}
+                className="mx-auto"
+                style={{objectFit: 'contain'} as React.CSSProperties}
+              />
+            </Link>
             <h1 className="text-2xl font-bold mb-2">Sign in to Smart Voice AI</h1>
             <p className="text-sm opacity-70">
               Access your Voice AI assistant and legal tools
