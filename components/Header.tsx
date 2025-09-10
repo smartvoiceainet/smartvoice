@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import ButtonSignin from "./ButtonSignin";
+import ButtonAccount from "./ButtonAccount";
 import VoiceAIMenu from "./VoiceAI/VoiceAIMenu";
 import VoiceAINotifications from "./VoiceAI/VoiceAINotifications";
 import config from "@/config";
@@ -108,13 +109,15 @@ const Header = () => {
 
         {/* Links on the right */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
-          {status === "authenticated" && (
+          {status === "authenticated" ? (
             <>
               <VoiceAIMenu />
               <VoiceAINotifications />
+              <ButtonAccount />
             </>
+          ) : (
+            cta
           )}
-          {cta}
         </div>
       </nav>
 
@@ -186,12 +189,14 @@ const Header = () => {
                 )}
               </div>
               <div className="py-6">
-                {status === "authenticated" && (
-                  <div className="mb-4">
+                {status === "authenticated" ? (
+                  <div className="space-y-4">
                     <VoiceAINotifications />
+                    <ButtonAccount />
                   </div>
+                ) : (
+                  cta
                 )}
-                {cta}
               </div>
             </div>
           </div>
