@@ -23,11 +23,12 @@ const MainLogo: React.FC<MainLogoProps> = ({
   return (
     <div className={`${sizeClass} ${className} relative`}>
       <Image
-        src="/images/logomain.png"
+        src="/images/smartvoiceclearbackcropped.png"
         alt="Smart Voice AI Main Logo"
-        width={500}
-        height={300}
+        width={900}
+        height={500}
         className="w-full h-auto rounded-md"
+        style={{objectFit: 'contain'} as React.CSSProperties}
         priority
       />
     </div>

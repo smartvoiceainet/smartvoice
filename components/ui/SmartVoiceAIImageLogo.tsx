@@ -23,11 +23,12 @@ const SmartVoiceAIImageLogo: React.FC<ImageLogoProps> = ({
   return (
     <div className={`${sizeClass} ${className} relative`}>
       <Image
-        src="/images/smart-voice-ai-logo-new.jpg"
+        src="/images/smartvoiceclearbackcropped.png"
         alt="Smart Voice AI Logo"
-        width={500}
-        height={300}
+        width={900}
+        height={500}
         className="w-full h-auto rounded-md"
+        style={{objectFit: 'contain'} as React.CSSProperties}
         priority
       />
     </div>

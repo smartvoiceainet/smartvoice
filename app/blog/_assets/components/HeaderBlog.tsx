@@ -163,13 +163,13 @@ const HeaderBlog = () => {
             title={`${config.appName} homepage`}
           >
             <Image
-              src="/images/smart-voice-ai-logo.png"
+              src="/images/smartvoiceclearbackcropped.png"
               alt={`${config.appName} logo`}
-              className="h-8 w-auto"
+              className="h-12 w-auto"
               style={{objectFit: 'contain'} as React.CSSProperties}
               priority={true}
-              width={32}
-              height={32}
+              width={240}
+              height={72}
             />
           </Link>
         </div>
@@ -231,13 +231,13 @@ const HeaderBlog = () => {
               href="/"
             >
               <Image
-                src="/images/smart-voice-ai-logo.png"
+                src="/images/smartvoiceclearbackcropped.png"
                 alt={`${config.appName} logo`}
-                className="h-8 w-auto"
+                className="h-10 w-auto"
                 style={{objectFit: 'contain'} as React.CSSProperties}
                 priority={true}
-                width={120}
-                height={40}
+                width={200}
+                height={60}
               />
             </Link>
             <button

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import config from "@/config";
-import logoPlaceholder from "@/app/logo-placeholder";
 
 // Add the Footer to the bottom of your landing page and more.
 // The support link is connected to the config.js file. If there's no config.resend.supportEmail, the link won't be displayed.
@@ -18,12 +17,12 @@ const Footer = () => {
               className="flex gap-2 justify-center md:justify-start items-center"
             >
               <Image
-                src="/images/smart-voice-ai-logo.png"
+                src="/images/smartvoiceclearbackcropped.png"
                 alt={`${config.appName} logo`}
                 priority={true}
                 className="h-8 w-auto"
-                width={150}
-                height={50}
+                width={144}
+                height={80}
                 style={{objectFit: 'contain'} as React.CSSProperties}
               />
             </Link>

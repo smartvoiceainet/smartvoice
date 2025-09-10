@@ -53,7 +53,7 @@ const SEO = ({
             '@type': 'Organization',
             name: config.appName,
             url: `https://${config.domainName}`,
-            logo: `https://${config.domainName}/images/smart-voice-ai-logo.png`,
+            "logo": "https://smartvoiceai.com/images/smartvoiceclearbackcropped.png",
             sameAs: [
               'https://twitter.com/smartvoiceai',
               'https://linkedin.com/company/smartvoiceai',

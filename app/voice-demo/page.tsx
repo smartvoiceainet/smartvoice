@@ -25,10 +25,10 @@ export default function VoiceDemoPage() {
       >
         <div className="w-full max-w-md mb-6">
           <Image 
-            src="/images/smart-voice-ai-auth-logo.svg"
+            src="/images/smartvoiceclearbackcropped.png"
             alt="Smart Voice AI"
-            width={180}
-            height={60}
+            width={270}
+            height={150}
             priority={true}
             style={{objectFit: 'contain', width: 'auto', height: 'auto'} as React.CSSProperties}
             className="mx-auto"

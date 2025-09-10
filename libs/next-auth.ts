@@ -162,7 +162,7 @@ export const authOptions: NextAuthOptionsExtended = {
   theme: {
     brandColor: "#1472ff", // Smart Voice AI blue color
     // Smart Voice AI logo for the authentication page
-    logo: "/images/smart-voice-ai-auth-logo.svg",
+    logo: "/images/smartvoiceclearbackcropped.png",
     buttonText: "#FFFFFF",
     // Removed unsupported brandText property
   },

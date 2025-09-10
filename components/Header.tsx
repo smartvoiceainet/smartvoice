@@ -10,7 +10,6 @@ import ButtonSignin from "./ButtonSignin";
 import VoiceAIMenu from "./VoiceAI/VoiceAIMenu";
 import VoiceAINotifications from "./VoiceAI/VoiceAINotifications";
 import config from "@/config";
-import logoPlaceholder from "@/app/logo-placeholder";
 
 const links: {
   href: string;
@@ -58,12 +57,12 @@ const Header = () => {
             title={`${config.appName} homepage`}
           >
             <Image
-              src="/images/smart-voice-ai-logo.png"
+              src="/images/smartvoiceclearbackcropped.png"
               alt={`${config.appName} logo`}
-              className="h-10 w-auto"
+              className="h-14 w-auto"
               priority={true}
-              width={180}
-              height={60}
+              width={280}
+              height={84}
               style={{objectFit: 'contain'} as React.CSSProperties}
             />
           </Link>
@@ -132,12 +131,12 @@ const Header = () => {
               href="/"
             >
               <Image
-                src="/images/smart-voice-ai-logo.png"
+                src="/images/smartvoiceclearbackcropped.png"
                 alt={`${config.appName} logo`}
-                className="h-10 w-auto"
+                className="h-12 w-auto"
                 priority={true}
-                width={180}
-                height={60}
+                width={240}
+                height={72}
                 style={{objectFit: 'contain'} as React.CSSProperties}
               />
             </Link>
