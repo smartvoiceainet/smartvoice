@@ -43,27 +43,6 @@ const VoiceAIMenu = ({ session: serverSession }: VoiceAIMenuProps) => {
       access: hasAccess
     },
     {
-      name: 'Call History',
-      href: '/dashboard/voice-ai-analytics?tab=calls',
-      icon: Phone,
-      active: pathname === '/dashboard/voice-ai-analytics' && pathname.includes('tab=calls'),
-      access: hasAccess
-    },
-    {
-      name: 'Legacy Dashboard',
-      href: '/dashboard/voice-ai-analytics?tab=legacy',
-      icon: BarChart,
-      active: pathname === '/dashboard/voice-ai-analytics' && pathname.includes('tab=legacy'),
-      access: hasAccess
-    },
-    {
-      name: 'Engagement Letters',
-      href: '/dashboard/voice-ai-analytics?tab=letters',
-      icon: FileText,
-      active: pathname === '/dashboard/voice-ai-analytics' && pathname.includes('tab=letters'),
-      access: hasAccess
-    },
-    {
       name: 'Data Synchronization',
       href: '/dashboard/voice-ai-analytics?tab=sync',
       icon: RefreshCw,
