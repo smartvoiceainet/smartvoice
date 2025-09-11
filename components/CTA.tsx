@@ -1,6 +1,5 @@
 import Image from "next/image";
 import config from "@/config";
-import { motion } from "framer-motion";
 
 const CTA = () => {
   return (
@@ -13,13 +12,7 @@ const CTA = () => {
       />
       <div className="relative hero-overlay bg-slate-900 bg-opacity-80"></div>
       <div className="relative hero-content text-center text-neutral-content p-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex flex-col items-center max-w-2xl p-8 md:p-0"
-        >
+        <div className="flex flex-col items-center max-w-2xl p-8 md:p-0">
           <h2 className="font-bold text-3xl md:text-5xl tracking-tight mb-8 md:mb-12">
             Stop Missing Calls. Start Growing Your Practice.
           </h2>
@@ -29,26 +22,22 @@ const CTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <motion.a 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <a 
               href="#pricing" 
-              className="btn btn-primary btn-lg"
+              className="btn btn-primary btn-lg hover:scale-105 transition-transform"
             >
               Get Started
-            </motion.a>
-            <motion.a 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#process" 
-              className="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-slate-900"
+            </a>
+            <a 
+              href="/schedule-demo" 
+              className="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-slate-900 hover:scale-105 transition-transform"
             >
               Schedule a Demo
-            </motion.a>
+            </a>
           </div>
           
 
-        </motion.div>
+        </div>
       </div>
     </section>
   );

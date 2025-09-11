@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import type { JSX } from "react";
-import { motion } from "framer-motion";
 
 // <FAQ> component is a lsit of <Item> component
 // Just import the FAQ & add your FAQ content to the const faqList arrayy below.
@@ -92,12 +91,7 @@ const FaqItem = ({ item, index }: { item: FAQItemProps; index: number }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <motion.li
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-    >
+    <li>
       <button
         className="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
         onClick={(e) => {
@@ -148,7 +142,7 @@ const FaqItem = ({ item, index }: { item: FAQItemProps; index: number }) => {
       >
         <div className="pb-5 leading-relaxed">{item?.answer}</div>
       </div>
-    </motion.li>
+    </li>
   );
 };
 

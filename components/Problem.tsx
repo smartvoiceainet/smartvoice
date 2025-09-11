@@ -1,15 +1,10 @@
-import { motion } from "framer-motion";
-
 const PainPoint = ({ icon, title, description }: { icon: string; title: string; description: string }) => {
   return (
-    <motion.div
-      whileHover={{ y: -5 }}
-      className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col gap-4"
-    >
+    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
       <div className="text-4xl mb-2">{icon}</div>
       <h3 className="text-xl font-bold">{title}</h3>
       <p className="opacity-80 text-sm leading-relaxed">{description}</p>
-    </motion.div>
+    </div>
   );
 };
 
@@ -17,94 +12,57 @@ const Problem = () => {
   return (
     <section className="bg-gradient-to-br from-slate-800 to-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-8 py-20 md:py-28">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="font-extrabold text-3xl md:text-5xl tracking-tight mb-6 max-w-3xl mx-auto">
             The Unseen Burden: What's Really Holding Your Practice Back?
           </h2>
           <p className="max-w-2xl mx-auto text-lg opacity-90 leading-relaxed">
             The constant ringing of the phone, a relentless siren stealing your focus. Every missed call represents a potential client lost. The administrative avalanche of scheduling, follow-ups, and client intake isn't just eating your time—it's consuming your passion for law and your ability to provide justice for your clients.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <PainPoint 
               icon="📞" 
               title="Missed Calls & Lost Leads" 
               description="Every unanswered ring is revenue walking out the door. In the competitive personal injury space, potential clients typically call 3+ firms simultaneously—and work with whoever responds first."
             />
-          </motion.div>
+          </div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <PainPoint 
               icon="⏱️" 
               title="Drowning in Administrative Tasks" 
               description="You spent years mastering the law, not answering phones. Yet administrative tasks consume 67% of the average attorney's day, leaving precious little time for actual legal work."
             />
-          </motion.div>
+          </div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <PainPoint 
               icon="💰" 
               title="High Cost of Human Staff" 
               description="Quality paralegals command $50,000-$70,000 annually, plus benefits and training—a crushing expense for solo practitioners and small firms trying to scale."
             />
-          </motion.div>
+          </div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <PainPoint 
               icon="⚖️" 
               title="Work-Life Imbalance & Burnout" 
               description="The phone doesn't respect dinner time, weekends, or your child's soccer game. The constant tether to your practice is slowly eroding your personal life and wellbeing."
             />
-          </motion.div>
+          </div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <PainPoint 
               icon="⚠️" 
               title="Fear of Missed Deadlines & Errors" 
               description="The nagging anxiety that something important will fall through the cracks grows with every new case. One missed deadline or communication error could damage a client's case—and your reputation."
             />
-          </motion.div>
+          </div>
           
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-xl blur-lg"></div>
             <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 flex flex-col items-center justify-center h-full">
               <h3 className="text-xl font-bold mb-3">Ready for a Solution?</h3>
@@ -113,7 +71,7 @@ const Problem = () => {
                 See the Solution
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

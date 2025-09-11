@@ -1,6 +1,5 @@
 import config from "@/config";
 import ButtonCheckout from "./ButtonCheckout";
-import { motion } from "framer-motion";
 
 // <Pricing/> displays the pricing plans for your app
 // It's your Stripe config in config.js.stripe.plans[] that will be used to display the plans
@@ -72,13 +71,7 @@ const Pricing = () => {
   return (
     <section className="bg-base-200 overflow-hidden" id="pricing">
       <div className="py-24 px-8 max-w-6xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="flex flex-col text-center w-full mb-20"
-        >
+        <div className="flex flex-col text-center w-full mb-20">
           <p className="font-medium text-primary mb-8">Simple, Transparent Pricing</p>
           <h2 className="font-bold text-3xl lg:text-5xl tracking-tight">
             Save Thousands in Staffing Costs with Smart Voice AI
@@ -87,18 +80,13 @@ const Pricing = () => {
             No long-term contracts. No hidden fees. <br />
             All plans include white-glove implementation and training at no additional cost.
           </p>
-        </motion.div>
+        </div>
 
         <div className="relative flex justify-center flex-col lg:flex-row items-center lg:items-stretch gap-8">
           {smartVoiceAIPlans.map((plan, index) => (
-            <motion.div
+            <div
               key={plan.priceId} 
               className="relative w-full max-w-lg"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
             >
               {plan.isFeatured && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
@@ -177,7 +165,7 @@ const Pricing = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
