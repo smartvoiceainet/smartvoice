@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const processSteps = [
@@ -48,13 +47,7 @@ const processSteps = [
 
 const ProcessStep = ({ step, index }: { step: typeof processSteps[0], index: number }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex gap-8 items-start"
-    >
+    <div className="flex gap-8 items-start">
       <div className="flex-shrink-0">
         <div className="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center">
           {step.icon}
@@ -65,7 +58,7 @@ const ProcessStep = ({ step, index }: { step: typeof processSteps[0], index: num
         <h3 className="text-xl font-bold text-slate-800 mb-3">{step.title}</h3>
         <p className="text-slate-600">{step.description}</p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -73,20 +66,14 @@ const Process = () => {
   return (
     <section className="py-20 bg-white" id="process">
       <div className="max-w-6xl mx-auto px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="font-extrabold text-3xl md:text-5xl tracking-tight mb-5 text-slate-800">
             Simple, Fast Implementation: Up & Running in Days
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-slate-600">
             No technical expertise required. Our team handles everything from integration to training, ensuring a smooth transition with zero disruption to your practice.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-x-16 gap-y-12 mt-16 relative">
           <div className="absolute top-0 bottom-0 left-1/2 w-px bg-blue-100 -translate-x-1/2 hidden md:block"></div>
@@ -95,18 +82,12 @@ const Process = () => {
             <ProcessStep key={step.number} step={step} index={index} />
           ))}
           
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-blue-50 p-6 md:p-8 rounded-xl col-span-full text-center mt-8 relative z-10"
-          >
+          <div className="bg-blue-50 p-6 md:p-8 rounded-xl col-span-full text-center mt-8 relative z-10">
             <p className="font-bold text-slate-800 mb-4">Ready to transform your practice with AI?</p>
             <a href="#pricing" className="btn btn-primary btn-lg">
               View Pricing Options
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -3,7 +3,6 @@
 import { useState, useRef } from "react";
 import type { JSX } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 interface Feature {
   title: string;
@@ -211,10 +210,7 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
   const { title, description, svg } = feature;
   
   return (
-    <motion.div 
-      whileHover={{ y: -5 }}
-      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-    >
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transition-transform">
       <div className="p-8">
         <div className="bg-blue-50 rounded-full w-14 h-14 flex items-center justify-center mb-5">
           <span className="text-blue-600">{svg}</span>
@@ -223,7 +219,7 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
         <h3 className="font-bold text-xl mb-3 text-slate-800">{title}</h3>
         <p className="text-slate-600 leading-relaxed">{description}</p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -292,46 +288,28 @@ const FeaturesAccordion = () => {
       id="features"
     >
       <div className="max-w-7xl mx-auto px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="font-extrabold text-3xl md:text-5xl tracking-tight mb-5 text-slate-800">
             Introducing Smart Voice AI: Your AI-Powered Legal Team, On-Demand
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-slate-600">
             Seamlessly automate your firm's operations, reduce costs, and reclaim your time.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {aiFeatures.map((feature, i) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
+            <div key={feature.title}>
               <FeatureCard feature={feature} />
-            </motion.div>
+            </div>
           ))}
         </div>
         
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 text-center"
-        >
+        <div className="mt-16 text-center">
           <a href="#process" className="btn btn-primary btn-lg rounded-lg px-8">
             See How It Works
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

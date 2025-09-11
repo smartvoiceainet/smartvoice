@@ -10,7 +10,7 @@ const ButtonScheduleDemo = ({
 }) => {
   return (
     <Link
-      href="/voice-demo"
+      href="/schedule-demo"
       className={`btn btn-outline ${extraStyle ? extraStyle : ""}`}
     >
       Schedule a Demo

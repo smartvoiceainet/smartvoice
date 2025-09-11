@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 import config from "@/config";
-import { motion } from "framer-motion";
 
 // Smart Voice AI attorney testimonials - real results from legal professionals
 const list: {
@@ -44,19 +43,10 @@ const Testimonial = ({ i }: { i: number }) => {
 
   return (
     <li key={i}>
-      <motion.figure 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: i * 0.1 }}
-        viewport={{ once: true }}
-        className="relative max-w-lg h-full p-6 md:p-10 bg-base-200 rounded-2xl max-md:text-sm flex flex-col">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-primary font-bold mb-3">
+      <figure className="relative max-w-lg mx-auto bg-base-100 shadow-lg rounded-lg p-6 md:p-8 flex flex-col">
+        <div className="text-primary font-bold mb-3">
           {testimonial.highlight}
-        </motion.div>
+        </div>
         <blockquote className="relative flex-1">
           <p className="text-base-content/80 leading-relaxed">
             {testimonial.text}
@@ -90,7 +80,7 @@ const Testimonial = ({ i }: { i: number }) => {
             </div>
           </div>
         </figcaption>
-      </motion.figure>
+      </figure>
     </li>
   );
 };
