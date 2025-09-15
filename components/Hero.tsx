@@ -9,7 +9,7 @@ const Hero = () => {
           Drowning in Calls, Not Cases? Reclaim Your Practice with AI Employees.
         </h1>
         <p className="text-lg text-slate-600 leading-relaxed">
-          Automate client intake, scheduling, and phone support with voice AI, designed specifically for personal injury attorneys.
+          Automate client intake, scheduling, and phone support with voice AI, designed specifically for attorneys.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           <a
@@ -28,7 +28,7 @@ const Hero = () => {
         </div>
 
         <div className="w-full">
-          <p className="text-sm text-slate-500 mb-2">Trusted by 100+ Personal Injury Firms Nationwide</p>
+          <p className="text-sm text-slate-500 mb-2">Trusted by Legal Firms Nationwide</p>
           <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-3">
             <div className="flex -space-x-2">
               {[1,2,3,4,5].map((i) => (
