@@ -8,7 +8,7 @@ import ButtonCheckout from "./ButtonCheckout";
 // Define Smart Voice AI pricing plans
 const smartVoiceAIPlans = [
   {
-    name: "Solo Practice",
+    name: "Basic",
     priceId: "solo-practice",
     price: 299,
     priceAnchor: 499,
@@ -26,7 +26,7 @@ const smartVoiceAIPlans = [
     cta: "Start Free Trial"
   },
   {
-    name: "Small Firm",
+    name: "Pro",
     priceId: "small-firm",
     price: 599,
     priceAnchor: 899,
@@ -52,7 +52,7 @@ const smartVoiceAIPlans = [
     priceAnchor: null,
     description: "For established firms with 6+ attorneys",
     features: [
-      "Unlimited calls",
+      "Up to 2,000 calls per month",
       "Multiple custom voice profiles",
       "Advanced call routing logic",
       "Multi-location support",
