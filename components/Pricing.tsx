@@ -5,67 +5,8 @@ import ButtonCheckout from "./ButtonCheckout";
 // It's your Stripe config in config.js.stripe.plans[] that will be used to display the plans
 // <ButtonCheckout /> renders a button that will redirect the user to Stripe checkout called the /api/stripe/create-checkout API endpoint with the correct priceId
 
-// Define Smart Voice AI pricing plans
-const smartVoiceAIPlans = [
-  {
-    name: "Basic",
-    priceId: "solo-practice",
-    price: 299,
-    priceAnchor: 499,
-    description: "Perfect for solo attorneys looking to maximize efficiency",
-    features: [
-      "Up to 300 calls per month",
-      "Custom voice & script training",
-      "Client intake qualification",
-      "Appointment scheduling",
-      "Text & email notifications",
-      "Case management integration",
-      "9am-5pm technical support"
-    ],
-    isFeatured: false,
-    cta: "Start Free Trial"
-  },
-  {
-    name: "Pro",
-    priceId: "small-firm",
-    price: 599,
-    priceAnchor: 899,
-    description: "For growing firms with 2-5 attorneys",
-    features: [
-      "Up to 1,000 calls per month",
-      "Custom voice & script training",
-      "Client intake qualification",
-      "Appointment scheduling",
-      "Text & email notifications",
-      "Case management integration",
-      "Analytics dashboard",
-      "Priority 24/7 technical support",
-      "Dedicated account manager"
-    ],
-    isFeatured: true,
-    cta: "Start Free Trial"
-  },
-  {
-    name: "Enterprise",
-    priceId: "enterprise",
-    price: 1499,
-    priceAnchor: null,
-    description: "For established firms with 6+ attorneys",
-    features: [
-      "Up to 2,000 calls per month",
-      "Multiple custom voice profiles",
-      "Advanced call routing logic",
-      "Multi-location support",
-      "Custom API integrations",
-      "White-labeled client portal",
-      "Advanced analytics & reporting",
-      "24/7 VIP technical support", 
-      "Quarterly strategy reviews"
-    ],
-    isFeatured: false,
-    cta: "Contact Sales"
-  }
-];
+// Use pricing plans from config
+const smartVoiceAIPlans = config.stripe.plans;
 
 const Pricing = () => {
   return (
@@ -152,7 +93,7 @@ const Pricing = () => {
                           />
                         </svg>
 
-                        <span>{feature} </span>
+                        <span>{typeof feature === 'string' ? feature : feature.name} </span>
                       </li>
                     ))}
                   </ul>

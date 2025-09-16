@@ -22,45 +22,68 @@ const config = {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1Niyy5AxyNprDp7iZIqEyD2h"
-            : "price_456",
+            ? "price_basic_test"
+            : "price_basic_live",
         //  REQUIRED - Name of the plan, displayed on the pricing page
-        name: "Starter",
+        name: "Basic",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
-        description: "Perfect for small projects",
+        description: "Perfect for solo attorneys looking to maximize efficiency",
         // The price you want to display, the one user will be charged on Stripe.
-        price: 99,
+        price: 299,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
-        priceAnchor: 149,
+        priceAnchor: 499,
         features: [
-          {
-            name: "NextJS boilerplate",
-          },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
+          { name: "Up to 300 calls per month" },
+          { name: "Custom voice & script training" },
+          { name: "Client intake qualification" },
+          { name: "Appointment scheduling" },
+          { name: "Text & email notifications" },
+          { name: "Case management integration" },
+          { name: "9am-5pm technical support" },
         ],
       },
       {
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1O5KtcAxyNprDp7iftKnrrpw"
-            : "price_456",
+            ? "price_pro_test"
+            : "price_pro_live",
         // This plan will look different on the pricing page, it will be highlighted. You can only have one plan with isFeatured: true
         isFeatured: true,
-        name: "Advanced",
-        description: "You need more power",
-        price: 149,
-        priceAnchor: 299,
+        name: "Pro",
+        description: "For growing firms with 2-5 attorneys",
+        price: 599,
+        priceAnchor: 899,
         features: [
-          {
-            name: "Agentic SaaS app NextJS boilerplate",
-          },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
-          { name: "1 year of updates" },
-          { name: "24/7 support" },
+          { name: "Up to 1,000 calls per month" },
+          { name: "Custom voice & script training" },
+          { name: "Client intake qualification" },
+          { name: "Appointment scheduling" },
+          { name: "Text & email notifications" },
+          { name: "Case management integration" },
+          { name: "Analytics dashboard" },
+          { name: "Priority 24/7 technical support" },
+          { name: "Dedicated account manager" },
+        ],
+      },
+      {
+        priceId:
+          process.env.NODE_ENV === "development"
+            ? "price_enterprise_test"
+            : "price_enterprise_live",
+        name: "Enterprise",
+        description: "For established firms with 6+ attorneys",
+        price: 1499,
+        priceAnchor: null,
+        features: [
+          { name: "Up to 2,000 calls per month" },
+          { name: "Multiple custom voice profiles" },
+          { name: "Advanced call routing logic" },
+          { name: "Multi-location support" },
+          { name: "Custom API integrations" },
+          { name: "White-labeled client portal" },
+          { name: "Advanced analytics & reporting" },
+          { name: "24/7 VIP technical support" },
+          { name: "Quarterly strategy reviews" },
         ],
       },
     ],
