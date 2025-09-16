@@ -20,7 +20,7 @@ const config = {
     plans: [
       {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
-        priceId:
+        priceId: prod_T3noPTk3BqvDf3
           process.env.NODE_ENV === "development"
             ? "price_basic_test"
             : "price_basic_live",
@@ -43,7 +43,7 @@ const config = {
         ],
       },
       {
-        priceId:
+        priceId: prod_T3nquvVADvjsNQ
           process.env.NODE_ENV === "development"
             ? "price_pro_test"
             : "price_pro_live",
@@ -66,7 +66,7 @@ const config = {
         ],
       },
       {
-        priceId:
+        priceId: prod_T3nse3vMkuT0PJ
           process.env.NODE_ENV === "development"
             ? "price_enterprise_test"
             : "price_enterprise_live",
