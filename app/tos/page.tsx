@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getSEOTags } from "@/libs/seo";
 import config from "@/config";
 
@@ -49,9 +50,19 @@ const TOS = () => {
           </svg>
           Back
         </Link>
-        <h1 className="text-3xl font-extrabold pb-6">
-          Terms and Conditions for {config.appName}
-        </h1>
+        <div className="flex items-center gap-4 mb-6">
+          <Image
+            src="/images/smartvoiceclearbackcropped.png"
+            alt={`${config.appName} logo`}
+            className="h-12 w-auto"
+            width={144}
+            height={80}
+            style={{objectFit: 'contain'} as React.CSSProperties}
+          />
+          <h1 className="text-3xl font-extrabold">
+            Terms and Conditions for {config.appName}
+          </h1>
+        </div>
 
         <pre
           className="leading-relaxed whitespace-pre-wrap"
@@ -59,21 +70,21 @@ const TOS = () => {
         >
           {`Last Updated: May 5, 2025
 
-Welcome to FeNAgO!
+Welcome to Smart Voice AI!
 
-These Terms of Service ("Terms") govern your use of the FeNAgO website at https://fenago.com ("Website") and the services provided by FeNAgO. By using our Website and services, you agree to these Terms.
+These Terms of Service ("Terms") govern your use of the Smart Voice AI website at https://smartvoiceai.com ("Website") and the services provided by Smart Voice AI. By using our Website and services, you agree to these Terms.
 
-1. Description of FeNAgO
+1. Description of Smart Voice AI
 
-FeNAgO is a platform that offers a Next.js agentic SaaS boilerplate to assist entrepreneurs in building AI-powered applications more efficiently.
+Smart Voice AI is a platform that provides AI-powered voice assistant services specifically designed for law firms to automate client intake, scheduling, and phone support.
 
-2. Ownership and Usage Rights
+2. Service Usage Rights
 
-When you purchase a package from FeNAgO, you gain the right to download and use the code provided for creating applications. You own the code you create but do not have the right to resell it. We offer a full refund within 7 days of purchase, as specified in our refund policy.
+When you subscribe to Smart Voice AI services, you gain access to our voice AI technology for your law firm's communication needs. You may use the service according to your subscription plan but do not have the right to resell or redistribute our technology. We offer a full refund within 7 days of purchase, as specified in our refund policy.
 
 3. User Data and Privacy
 
-We collect and store user data, including name, email, and payment information, as necessary to provide our services. For details on how we handle your data, please refer to our Privacy Policy at https://fenago.com/privacy-policy.
+We collect and store user data, including name, email, and payment information, as necessary to provide our services. For details on how we handle your data, please refer to our Privacy Policy at https://smartvoiceai.com/privacy-policy.
 
 4. Non-Personal Data Collection
 
@@ -81,15 +92,15 @@ We use web cookies to collect non-personal data for the purpose of improving our
 
 5. Governing Law
 
-These Terms are governed by the laws of France.
+These Terms are governed by the laws of the United States.
 
 6. Updates to the Terms
 
 We may update these Terms from time to time. Users will be notified of any changes via email.
 
-For any questions or concerns regarding these Terms of Service, please contact us at support@fenago.com.
+For any questions or concerns regarding these Terms of Service, please contact us at support@smartvoiceai.net.
 
-Thank you for using FeNAgO!`}
+Thank you for using Smart Voice AI!`}
         </pre>
       </div>
     </main>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getSEOTags } from "@/libs/seo";
 import config from "@/config";
 
@@ -49,9 +50,19 @@ const PrivacyPolicy = () => {
           </svg>{" "}
           Back
         </Link>
-        <h1 className="text-3xl font-extrabold pb-6">
-          Privacy Policy for {config.appName}
-        </h1>
+        <div className="flex items-center gap-4 mb-6">
+          <Image
+            src="/images/smartvoiceclearbackcropped.png"
+            alt={`${config.appName} logo`}
+            className="h-12 w-auto"
+            width={144}
+            height={80}
+            style={{objectFit: 'contain'} as React.CSSProperties}
+          />
+          <h1 className="text-3xl font-extrabold">
+            Privacy Policy for {config.appName}
+          </h1>
+        </div>
 
         <pre
           className="leading-relaxed whitespace-pre-wrap"
