@@ -33,7 +33,8 @@ const ButtonCheckout = ({
 
       window.location.href = url;
     } catch (e) {
-      console.error(e);
+      console.error("Stripe checkout error:", e);
+      alert("There was an error processing your request. Please check your Stripe configuration.");
     }
 
     setIsLoading(false);
