@@ -20,10 +20,10 @@ const config = {
     plans: [
       {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
-        priceId: prod_T3noPTk3BqvDf3
+        priceId:
           process.env.NODE_ENV === "development"
-            ? "price_basic_test"
-            : "price_basic_live",
+            ? "price_1S7gDBCfUZVQsDHFBBw0dfOv"
+            : "price_1S7gDBCfUZVQsDHFBBw0dfOv",
         //  REQUIRED - Name of the plan, displayed on the pricing page
         name: "Basic",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
@@ -43,10 +43,10 @@ const config = {
         ],
       },
       {
-        priceId: prod_T3nquvVADvjsNQ
+        priceId:
           process.env.NODE_ENV === "development"
-            ? "price_pro_test"
-            : "price_pro_live",
+            ? "price_1S7gF6CfUZVQsDHFBxYnXjOF"
+            : "price_1S7gF6CfUZVQsDHFBxYnXjOF",
         // This plan will look different on the pricing page, it will be highlighted. You can only have one plan with isFeatured: true
         isFeatured: true,
         name: "Pro",
@@ -66,10 +66,10 @@ const config = {
         ],
       },
       {
-        priceId: prod_T3nse3vMkuT0PJ
+        priceId:
           process.env.NODE_ENV === "development"
-            ? "price_enterprise_test"
-            : "price_enterprise_live",
+            ? "price_1S7gGMCfUZVQsDHFvgWG6cKF"
+            : "price_1S7gGMCfUZVQsDHFvgWG6cKF",
         name: "Enterprise",
         description: "For established firms with 6+ attorneys",
         price: 1499,
