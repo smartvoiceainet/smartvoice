@@ -49,9 +49,16 @@ export async function POST(req: NextRequest) {
         const customerId = session?.customer;
         const priceId = session?.line_items?.data[0]?.price.id;
         const userId = stripeObject.client_reference_id;
-        const plan = configFile.stripe.plans.find((p) => p.priceId === priceId);
+        const plan = configFile.stripe.plans.find((p) => {
+          // Direct string match for actual price IDs from Stripe
+          return p.priceId === priceId;
+        });
 
-        if (!plan) break;
+        if (!plan) {
+          console.error(`No plan found for priceId: ${priceId}`);
+          console.error(`Available plans:`, configFile.stripe.plans.map(p => ({ name: p.name, priceId: p.priceId })));
+          break;
+        }
 
         const customer = (await stripe.customers.retrieve(
           customerId as string

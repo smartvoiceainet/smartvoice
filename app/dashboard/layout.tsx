@@ -38,9 +38,20 @@ export default async function LayoutPrivate({
                 style={{objectFit: 'contain'} as React.CSSProperties}
               />
             </Link>
-            <div className="text-sm text-base-content/70">
-              Dashboard
-            </div>
+            <nav className="flex items-center space-x-6">
+              <Link 
+                href="/dashboard" 
+                className="text-sm font-medium text-base-content hover:text-primary transition-colors"
+              >
+                Dashboard
+              </Link>
+              <Link 
+                href="/billing" 
+                className="text-sm font-medium text-base-content hover:text-primary transition-colors"
+              >
+                Billing
+              </Link>
+            </nav>
           </div>
         </div>
       </header>
