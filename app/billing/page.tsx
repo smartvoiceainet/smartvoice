@@ -28,6 +28,16 @@ export default async function BillingPage() {
     redirect(config.auth.loginUrl);
   }
 
+  // Ensure we have the user data we need, fallback to session data if needed
+  const userData = {
+    _id: user._id?.toString() || session.user.id,
+    email: user.email || session.user.email,
+    name: user.name || session.user.name,
+    customerId: user.customerId,
+    priceId: user.priceId,
+    hasAccess: user.hasAccess || false
+  };
+
   return (
     <main className="min-h-screen bg-base-100">
       {/* Header with Logo and Navigation */}
@@ -95,7 +105,7 @@ export default async function BillingPage() {
             </p>
           </div>
           
-          <BillingComponent user={JSON.parse(JSON.stringify(user))} />
+          <BillingComponent user={userData} />
         </div>
       </div>
     </main>
