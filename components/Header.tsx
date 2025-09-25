@@ -18,6 +18,10 @@ const links: {
   label: string;
 }[] = [
   {
+    href: "/#features",
+    label: "Features",
+  },
+  {
     href: "/#pricing",
     label: "Pricing",
   },
