@@ -29,9 +29,9 @@ const config = {
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
         description: "Perfect for solo attorneys looking to maximize efficiency",
         // The price you want to display, the one user will be charged on Stripe.
-        price: 299,
+        price: 499,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
-        priceAnchor: 499,
+        priceAnchor: null,
         features: [
           { name: "Up to 300 calls per month" },
           { name: "Custom voice & script training" },
@@ -51,8 +51,8 @@ const config = {
         isFeatured: true,
         name: "Pro",
         description: "For growing firms with 2-5 attorneys",
-        price: 599,
-        priceAnchor: 899,
+        price: 899,
+        priceAnchor: null,
         features: [
           { name: "Up to 1,000 calls per month" },
           { name: "Custom voice & script training" },
