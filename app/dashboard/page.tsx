@@ -23,6 +23,11 @@ const RealTimeAnalyticsDashboard = dynamicImport(
   { ssr: false }
 );
 
+const CustomerCallAnalytics = dynamicImport(
+  () => import('@/components/VoiceAI/CustomerCallAnalytics'),
+  { ssr: false }
+);
+
 const CallHistoryTable = dynamicImport(
   () => import('@/components/VoiceAI/CallHistoryTable'),
   { ssr: false }
@@ -115,7 +120,7 @@ export default async function Dashboard({
             
             <ClientAssistantFilterProvider>
               <TabsContent value="realtime" className="mt-0">
-                <RealTimeAnalyticsDashboard />
+                <CustomerCallAnalytics />
               </TabsContent>
               
               <TabsContent value="calls" className="mt-0">
